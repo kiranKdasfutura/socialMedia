@@ -7,6 +7,10 @@ import NavBar from "./components/navbar/NavBar";
 import LeftBar from "./components/leftbar/LeftBar";
 import RightBar from "./components/rightbar/RightBar";
 
+import { useSelector, useDispatch } from "react-redux";
+
+import './style.scss'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,15 +21,21 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const currentUser = true;
+  //useSelector
+  const theme = useSelector((state) => state.theme.theme);
+  const user=useSelector((state)=>state.theme)
+  const currentUser = user;
+    console.log("action",user);
 
   const Layout = () => {
     return (
-      <div>
+      <div className={`theme-${theme?"dark":"light"}`}>
         <NavBar />
         <div style={{ display: "flex" }}>
           <LeftBar />
-          <Outlet />
+          <div style={{ flex: 6 }}>
+            <Outlet />
+          </div>
           <RightBar />
         </div>
       </div>

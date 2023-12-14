@@ -11,19 +11,19 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
-// slices
-import themeReducer from "../store/darkModeSlice";
-import userReducer from "../store/userSlice";
+import darkModeSlice from "../store/darkModeSlice";
+import userSlice from "../store/userSlice";
 
 const persistConfig = {
   key: "userDataSM",
-  version: 1,
+  version: "1.0",
   storage,
 };
 
+// Provide slice reducers, not the slice objects
 const rootReducer = combineReducers({
-  theme: themeReducer,
-  user: userReducer,
+  theme: darkModeSlice,
+  user: userSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

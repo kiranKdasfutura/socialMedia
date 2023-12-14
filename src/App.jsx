@@ -23,9 +23,9 @@ import {
 function App() {
   //useSelector
   const theme = useSelector((state) => state.theme.theme);
-  const user=useSelector((state)=>state.theme)
+  const user = useSelector((state) => state.user.currentUser);
   const currentUser = user;
-    console.log("action",user);
+    // console.log("action",user);
 
   const Layout = () => {
     return (

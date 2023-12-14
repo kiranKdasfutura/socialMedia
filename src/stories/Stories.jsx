@@ -2,42 +2,42 @@ import React from 'react'
 import './stories.scss'
 import {useSelector} from 'react-redux'
 const Stories = () => {
-    const user =useSelector((state)=>state)
+    const user = useSelector((state) => state.user.currentUser);
     console.log(user);
     const stories = [
       {
         id: 1,
-        name: "kiran",
+        name: "mannan",
         image:
           "https://aniportalimages.s3.amazonaws.com/media/details/ANI-20221016054738.jpeg",
       },
       {
         id: 2,
-        name: "kiran",
+        name: "mannan",
         image:
           "https://aniportalimages.s3.amazonaws.com/media/details/ANI-20221016054738.jpeg",
       },
       {
         id: 3,
-        name: "kiran",
+        name: "mannan",
         image:
           "https://aniportalimages.s3.amazonaws.com/media/details/ANI-20221016054738.jpeg",
       },
       {
         id: 4,
-        name: "kiran",
+        name: "mannan",
         image:
           "https://aniportalimages.s3.amazonaws.com/media/details/ANI-20221016054738.jpeg",
-      }
+      },
     ];
   return (
     <div className="stories">
       <div className="story">
         <img
-          src="https://aniportalimages.s3.amazonaws.com/media/details/ANI-20221016054738.jpeg"
+          src={user.image}
           alt=""
         />
-        <span>kirna</span>
+        <span>{user.name}</span>
         {/* <h1>hello</h1> */}
         <button>+</button>   
       </div>

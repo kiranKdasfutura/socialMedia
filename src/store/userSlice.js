@@ -5,15 +5,15 @@ export const userSlice = createSlice({
   initialState: {
     currentUser: {
       id: 7,
-      name: "developer",
+      name: "deva",
       image:
         "https://imagevars.gulfnews.com/2023/06/27/Prithviraj-Sukumaran_188fc56fd28_large.jpg",
     },
   },
   reducers: {
     login: (state, action) => {
-      // Assuming action.payload is an object with new user data
-      state.currentUser = action.payload;
+      // // Assuming action.payload is an object with new user data
+      // state.currentUser = action.payload;
     },
   },
 });
